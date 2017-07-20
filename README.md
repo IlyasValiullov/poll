@@ -3,7 +3,7 @@
 Test app for create and share poll. Your friend vote and you view results.
 
 
-* Components
+Components:
 	
 	- Ruby 2.3.1
 	- Rails 5.1

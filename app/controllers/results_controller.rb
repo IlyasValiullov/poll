@@ -116,6 +116,10 @@ class ResultsController < ApplicationController
     
     @poll_results = ActiveRecord::Base.connection.execute(sql_query)
 
+    respond_to do |format|
+      format.html {}
+      format.json {render :json=> @poll_results.to_json}
+    end
   end
 
   def destroy

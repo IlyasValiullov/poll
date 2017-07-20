@@ -1,3 +1,5 @@
+= javascript_include_tag 'results'
+
 %h1 Results - #{@poll.title}
 %table.table.table-bordered
   %thead
@@ -14,3 +16,5 @@
         %td.col-md-1= res["answer"]
         %td.col-md-1= res["answer_count"]
         %td.col-md-1= ((res["answer_count"].to_f / res["all_answer_count"].to_f)*100).round(2)
+
+= button_tag "Refresh", id: "refresh"
