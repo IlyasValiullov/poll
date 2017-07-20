@@ -1,13 +1,11 @@
 # POLL
 
-Test app
+Test app for create and share poll. Your friend vote and you view results.
 
-* Ruby version
 
-	2.4
+* Components
 
-* Using features
-
+  - Ruby 2.3.1
 	- Rails 5.1
 	-	Haml
 	- Bootstrap
@@ -15,17 +13,17 @@ Test app
 	- Capybara
 
 
-Capybara test dir 
+Capybara test dir:
 
 	spec/controllers/sessions_controller.spec.rb
 
 
-Deployed app
+Deployed app:
 
 	https://brzpoll.herokuapp.com
 
 
 User for test:
 
-	* email - a
-	* password - 1111
+	email - a
+	password - 1111
