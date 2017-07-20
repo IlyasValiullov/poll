@@ -23,12 +23,12 @@ var refresh_data = function(){
 					var rounded = rounded_int.toFixed(1).toString();
 
 					$("tbody").append(
-					`<tr style="display: none;">
-	  			   <td class="col-md-8">`+ value.question +`</td>
-	  			   <td class="col-md-1">`+ value.answer +`</td>
-	  			   <td class="col-md-1">`+ value.answer_count.toString() +`</td>
-	  			   <td class="col-md-1">`+ rounded +`</td>
-	  			</tr>`);
+					"<tr style=\"display: none;\">\
+	  			   <td class=\"col-md-8\">"+ value.question +"</td>\
+	  			   <td class=\"col-md-1\">"+ value.answer +"</td>\
+	  			   <td class=\"col-md-1\">"+ value.answer_count.toString() +"</td>\
+	  			   <td class=\"col-md-1\">"+ rounded +"</td>\
+	  			</tr>");
 	  			});
 
 					$("tbody tr").show("highlight");
