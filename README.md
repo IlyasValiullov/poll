@@ -1,21 +1,31 @@
-# README
+# POLL
 
 Test app
 
 * Ruby version
-2.4
+
+	2.4
 
 * Using features
-Bootstrap
+
+	- Rails 5.1
+	-	Haml
+	- Bootstrap
+	- Rspec
+	- Capybara
 
 
-* Capybara test
-spec/controllers/sessions_controller.spec.rb
+Capybara test dir 
+
+	spec/controllers/sessions_controller.spec.rb
 
 
-* Deployed app
-https://brzpoll.herokuapp.com
+Deployed app
+
+	https://brzpoll.herokuapp.com
+
 
 User for test:
-email - "a"
-password - "1111"
+
+	* email - a
+	* password - 1111
