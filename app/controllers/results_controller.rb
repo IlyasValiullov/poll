@@ -60,7 +60,8 @@ class ResultsController < ApplicationController
       if session[:last_update] != last_update.to_s
         session[:last_update] = last_update.to_s 
       else
-        render :json
+        head :ok
+        return
       end
 
     else
