@@ -55,7 +55,7 @@ class ResultsController < ApplicationController
   def index
     if params[:format] == "json"
 
-      last_update = PollResult.where(poll_id: 2).order(updated_at: "DESC").first.updated_at
+      last_update = PollResult.where(poll_id: params[:poll_id]).order(updated_at: "DESC").first.updated_at
     
       if session[:last_update] != last_update.to_s
         session[:last_update] = last_update.to_s 

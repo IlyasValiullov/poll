@@ -11,9 +11,6 @@ var myround = function(number, precision) {
 
 var refresh_data = function(){
 		console.log( "project ready!" );
-    
-
-		
 
 		$.get("results.json").done(
 			function( data ) {
