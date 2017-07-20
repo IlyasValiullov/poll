@@ -20,6 +20,9 @@ class AnswersController < ApplicationController
   end
 
   def destroy
+    @answer = PollQuestionAnswer.find(params[:id])
+    @answer.destroy
+    redirect_to poll_question_answers_url, notice: 'Question was successfully destroyed.'
   end
 
   def show

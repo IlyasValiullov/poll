@@ -3,9 +3,9 @@
 %form.form-horizontal
   .form-group
     = label_tag :current_poll_key, "Vote url for sharing", class: "col-sm-2 control-label"
-    %div.col-sm-10
+    %div.col-sm-8
       = text_field_tag :current_poll_key, @current_poll_key, class: "form-control"
-
+    = link_to "Results", poll_results_path(@poll),  class: "btn btn-default col-sm-2"
 
 =link_to 'New question', new_poll_question_path(poll_id: params[:poll_id]), class: "btn btn-success"
 

@@ -19,6 +19,11 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
+    @question = PollQuestion.find(params[:id])
+    @question.destroy
+    redirect_to poll_questions_url, notice: 'Question was successfully destroyed.'
+    # @poll.destroy
+    # 
   end
 
   def show
