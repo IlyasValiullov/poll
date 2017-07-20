@@ -114,7 +114,6 @@ class ResultsController < ApplicationController
 
     # sql_query.sub! "&param", "#{@poll.id}"
     
-    byebug
     @poll_results = ActiveRecord::Base.connection.execute(sql_query)
 
   end

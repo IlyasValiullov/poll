@@ -32,7 +32,6 @@ class UsersController < ApplicationController
       redirect_to polls_path, notice: 'User was successfully created.' 
       # format.json { render :show, status: :created, location: @user }
     rescue
-      byebug
       render :new 
       # format.json { render json: @user.errors, status: :unprocessable_entity }
     end

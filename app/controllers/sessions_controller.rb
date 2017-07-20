@@ -1,6 +1,5 @@
 class SessionsController < ApplicationController
   def new
-    byebug
   	if !current_user.nil?
       redirect_to polls_path
     else
