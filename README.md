@@ -11,3 +11,7 @@ Bootstrap
 
 * Capybara test
 spec/controllers/sessions_controller.spec.rb
+
+
+* Deployed app
+https://brzpoll.herokuapp.com
