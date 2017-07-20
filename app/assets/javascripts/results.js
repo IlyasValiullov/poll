@@ -13,11 +13,12 @@ var refresh_data = function(){
 		console.log( "project ready!" );
     
 
-		$("tbody tr").empty();
+		
 
 		$.get("results.json").done(
 			function( data ) {
 				console.log(data);
+				$("tbody tr").empty();
 				$.each(data,function(index, value){
 					var rounded_int = myround(((value.answer_count / value.all_answer_count)*100),1);
 					var rounded = rounded_int.toFixed(1).toString();
