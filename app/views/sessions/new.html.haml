@@ -1,0 +1,18 @@
+-byebug
+%h1 Login
+= form_tag controller: "sessions", action: "create", method: "post" do
+  #login_form.form-horizontal
+    -	if flash[:login_failed] 
+      .well.well-sm
+        %h4 Login failed
+    .form-group
+      = label_tag :email, "Email", class: "col-sm-2 control-label"
+      %div.col-sm-10
+        = text_field_tag :email,"", class: "form-control"
+    .form-group
+      = label_tag :password, "Password", class: "col-sm-2 control-label"
+      %div.col-sm-10
+        = text_field_tag :password,"", class: "form-control"
+    .form-group
+      .col-sm-offset-2.col-sm-10
+        = submit_tag 'Login', class: "btn"

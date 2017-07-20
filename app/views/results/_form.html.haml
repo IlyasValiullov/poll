@@ -1,0 +1,17 @@
+= form_tag url_for(controller: "results", action: "create"), method: "post"
+.form-horizontal
+  -@poll_results.each do |question|
+    .form-group
+      = label_tag question[:question],question[:question], class: "col-sm-2 control-label"
+      .form-group
+        .radio
+          - question[:answers].each do |answer|
+            %label
+              = radio_button_tag( "poll[#{question[:poll_id]}]answers[#{question[:question_id]}]", answer[:answer_id], false, data: { answer: answer[:answer]})
+              = answer[:answer]
+            
+
+
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = submit_tag "Save", class: "btn btn-default"

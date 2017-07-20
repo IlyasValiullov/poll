@@ -1,0 +1,23 @@
+.navbar.navbar-default
+	.container-fluid
+		#navbar.navbar-collapse.collapse
+			%ul.nav.navbar-nav
+				- if !@_current_user.nil?
+					%li
+						= link_to 'Polls', polls_path, class: "navbar-toggle"
+				
+				- if !@poll.nil?  and @poll.persisted?
+					%li
+						= link_to @poll.title, poll_path(@poll), class: "navbar-toggle"
+				- if !@question.nil? and @question.persisted?
+					%li
+						= link_to @question.question, poll_question_answers_path(@poll, @question), class: "navbar-toggle"
+			%ul.nav.navbar-nav.navbar-right
+				- if @_current_user.nil?
+					%li
+						= link_to 'Registration', new_user_path, class: "navbar-toggle"
+					%li
+						= link_to 'Login', login_path, class: "navbar-toggle"
+				- else
+					%li
+						= link_to 'Logout', logout_path, class: "navbar-toggle"

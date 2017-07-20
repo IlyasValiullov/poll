@@ -1,0 +1,18 @@
+%h1 Hello #{@_current_user.email}
+%p 
+  :plain 
+    You have got a invitation from <strong>#{@poll.author.email}</strong> to make your vote
+.form-horizontal
+  .form-group
+    %div.col-sm-2.control-label
+      = label_tag "Poll name"
+    %div.col-sm-10
+      %p #{@poll.title}
+  .form-group
+    %div.col-sm-2.control-label
+      = label_tag "Questions"
+    %div.col-sm-10
+      %p #{@poll.questions.count}
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = button_to "Start poll", poll_accesses_path, class: "btn btn-default"

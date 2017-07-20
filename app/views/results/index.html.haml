@@ -1,0 +1,16 @@
+%h1 Results - #{@poll.title}
+%table.table.table-bordered
+  %thead
+    %tr
+      %th.col-md-6 Question
+      %th.col-md-4 Answer
+      %th.col-md-1 Count, votes 
+      %th.col-md-1 Count, %
+
+  %tbody
+    -@poll_results.each do |res|
+      %tr
+        %td.col-md-8= res["question"]
+        %td.col-md-1= res["answer"]
+        %td.col-md-1= res["answer_count"]
+        %td.col-md-1= ((res["answer_count"].to_f / res["all_answer_count"].to_f)*100).round(2)

@@ -1,0 +1,25 @@
+%h1 #{@poll.title}
+
+%form.form-horizontal
+  .form-group
+    = label_tag :current_poll_key, "Vote url for sharing", class: "col-sm-2 control-label"
+    %div.col-sm-10
+      = text_field_tag :current_poll_key, @current_poll_key, class: "form-control"
+
+
+=link_to 'New question', new_poll_question_path(poll_id: params[:poll_id]), class: "btn btn-success"
+
+%table.table.table-bordered
+  %thead
+    %tr
+      %th.col-md-10 Questions
+      %th.col-md-1
+      %th.col-md-1
+
+  %tbody
+    - @questions.each do |question|
+      %tr
+        %td.col-md-10= link_to question.question, poll_question_answers_path(@poll, question)
+        %td.col-md-1= link_to 'Edit', edit_poll_path(question)
+        %td.col-md-1= link_to 'Destroy', poll_question_path(poll_id: params[:poll_id], id: question.id), :method => :delete, :data => { :confirm => 'Are you sure?' }
+

@@ -1,0 +1,9 @@
+= form_for @answer do |f|
+  .form-horizontal
+    .form-group
+      = f.label :answer, class: "col-sm-2 control-label"
+      %div.col-sm-10
+        = f.text_field :answer, class: "form-control"
+    .form-group
+      .col-sm-offset-2.col-sm-10
+        = f.submit 'Save', class: "btn"

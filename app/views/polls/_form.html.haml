@@ -1,0 +1,17 @@
+= form_for @poll do |f|
+  - if @poll.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@poll.errors.count, "error")} prohibited this poll from being saved:"
+      %ul
+        - @poll.errors.full_messages.each do |msg|
+          %li= msg
+  
+  .form-horizontal          
+    .form-group
+      = f.label :title, class: "col-sm-2 control-label"
+      %div.col-sm-10
+        = f.text_field :title
+    .form-group
+      .col-sm-offset-2.col-sm-10
+        = f.submit 'Save', class: "btn btn-default"
+
