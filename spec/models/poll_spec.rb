@@ -1,44 +1,87 @@
 require 'rails_helper'
-require 'pry-debugger'
 
 RSpec.describe Poll, type: :model do
-  #pending "add some examples to (or delete) #{__FILE__}"
+	let(:user) { User.create(email: "a@a.com", password: "111222") }
 
-  context "create" do
-    let(:user) { User.create(email: "a@a.com", password: "111222") }
-    let(:poll) { Poll.new(title: "City poll", author: user) }
-    let(:question) { PollQuestion.new(poll: poll, question: "Will destroy your building?")}
-    let(:answer_yes) { PollQuestionAnswer.new(question: question, answer: "Yes")}
-    let(:answer_no) { PollQuestionAnswer.new(question: question, answer: "No")}
+	let(:poll) { Poll.new }
+	describe ".create" do
+		context "when with title and author" do
+			it "is valid" do
+				fill_poll(poll, {user: user,title: "City poll"})
+				expect(poll).to be_valid
+			end
+			it "user have poll" do
+				fill_and_save_poll(poll, {user: user,title: "City poll"})
+				expect(user.polls.last).to eq(poll)
+			end
+		end
+		context "when without title" do
+			it "is invalid" do
+				fill_poll(poll, {user: user})
+				poll.valid?
+				expect(poll.errors[:title]).to include("can't be blank")
+			end
+		end
+		context "when without author" do
+			it "is invalid" do
+				poll.title = "City poll"
+				poll.valid?
+				expect(poll.errors[:author]).to include("can't be blank")
+			end
+		end
 
-  
-  	it 'Poll.create' do
-  		expect(poll.save()).to be_truthy
-  	end
-  	it 'PollQuestion.create' do
-  		expect(question.save()).to be_truthy
-  	end
-  	it 'PollQuestionAnswer.create' do
-      answer_no.save()
-      binding.pry
-  		expect(answer_yes.save()).to be_truthy
-  	end
+		context "when dublicate poll name per user" do
+			it "is invalid"
+
+		end
+
+		context "when two user share poll name " do
+			it "is valid"
+			
+		end
+	end
+
+	describe ".questions" do
+		context "when create new question" do
+			it "have question" do
+				fill_and_save_poll(poll, {user: user,title: "City poll"})
+				a = PollQuestion.create(poll: poll, question: "Will destroy buildings?")
+				expect(poll.questions).to include(a)
+			end
+		end
+		context "when doesn't have concerned questions" do
+			it "is empty"
+      # be_empty
+    end
   end
 
-  # it 'question.answers' do
-  # 	expect(poll.question[:first].answers).to include(answer_yes, answer_no)
-  # end	
+  describe ".destroy" do
+  	context "when has questions" do
+  		it "destroy nested questions" do
+  			fill_and_save_poll(poll, {user: user,title: "City poll"})
+  			q = poll.questions.create(question: "Will destroy buildings?")
+  			poll.destroy
+  			expect(q.destroyed?).to be_truthy
+  		end
+  	end
+
+  	context "when has accessed users" do
+  		it "destroy concerned accesses"
+  	end
+
+  	context "when has results" do
+  		it "destroy concerned results"
+  	end
+  end
   
 
+  def fill_and_save_poll(poll, params)
+  	fill_poll(poll, params)
+  	poll.save
+  end
 
-
-
-  #check created new poll
-
-  #check get poll questions
-  #check create poll question
-
-  #check get poll question answers
-  #check create poll question answer
-
+  def fill_poll(poll, params)
+  	poll.author = params.fetch(:user, nil)
+  	poll.title = params.fetch(:title, nil)
+  end
 end

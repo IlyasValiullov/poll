@@ -6,6 +6,7 @@ class Poll < ApplicationRecord
 	has_many :poll_accesses, dependent: :destroy
 
 	before_create :set_key
+	validates :title, presence: true, uniqueness: { scope: :author }
 
 	def set_key
 		self.key = SecureRandom.hex(20)

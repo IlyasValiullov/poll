@@ -1,7 +1,3 @@
-// var myround = {};
-
-// myround.round = 
-
 var myround = function(number, precision) {
     var factor = Math.pow(10, precision);
     var tempNumber = number * factor;
@@ -10,13 +6,9 @@ var myround = function(number, precision) {
 };
 
 var refresh_data = function(){
-		console.log( "project ready!" );
-
 		$.get("results.json").done(
 			function( data ) {
-				console.log(data);
 				$("tbody tr").empty();
-				debugger
 				$.each(data,function(index, value){
 					var rounded_int = myround(((value.answer_count / value.all_answer_count)*100),1);
 					var rounded = rounded_int.toFixed(1).toString();
@@ -36,26 +28,6 @@ var refresh_data = function(){
 };
 
 $( document ).ready(function() {
-  console.log( "project ready!" );
-  setInterval(refresh_data, 5 * 1000); // 60 * 1000 milsec
+  setInterval(refresh_data, 5 * 1000);
 	$("#refresh").click(refresh_data);
-		// <tr>
-  //     <td class="col-md-8">New ques</td>
-  //     <td class="col-md-1">asn</td>
-  //     <td class="col-md-1">0</td>
-  //     <td class="col-md-1">0.0</td>
-  //   </tr>
-
-
-  //   var field = this;
-  //   $.ajax( $('.simple_form').prop('action'), {
-  //     method: 'PATCH',
-  //     data: {project: {action: "do_invest", amount: $('#invest_amount')[0].value}},
-  //     dataType: 'json',
-  //     success: function(data){
-  //       console.log(data.location);
-  //       window.location.href = data.location;
-  //     }
-  //   } );
-  
 });
