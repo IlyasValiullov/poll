@@ -47,6 +47,8 @@ module PollsHelper
 					}
 				end
 			end
+
+			@poll_results 
 		end
 	end
 end

@@ -6,7 +6,7 @@ class ResultsController < ApplicationController
 	include ResultHelper
 
 	def new
-		PollInfo.show(@poll.id)
+		@poll_results = PollInfo.show(@poll.id)
 	end
 
 	def create
