@@ -59,8 +59,12 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
-gem "haml-rails", "~> 0.9"
+# gem "haml-rails", "~> 0.9"
 gem 'bcrypt'
 
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'jquery-rails'
+
+gem 'grape', '~> 1.0.2'
+gem 'jwt', '~> 2.1.0'
+gem 'haml'

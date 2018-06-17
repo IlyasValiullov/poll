@@ -1,0 +1,10 @@
+.git
+.bundle
+.byebug_history
+.gitignore
+.rspec
+tmp/*
+log/*
+test
+spec
+node_modules

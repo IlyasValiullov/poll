@@ -1,5 +1,43 @@
 {
-  "name": "test_task",
+  "name": "poll",
   "private": true,
-  "dependencies": {}
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "~8.4.0",
+    "npm": "^5.4.1",
+    "yarn": "^1.0.1"
+  },
+  "dependencies": {
+    "axios": "^0.16.2",
+    "vue": "^2.4.2",
+    "vue-router": "^2.7.0",
+    "vuetify": "^0.15.2",
+    "vuex": "^2.4.0",
+    "vuex-router-sync": "^4.3.2"
+  },
+  "description": "Test app for create and share poll. Your friend vote and you view results.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "devDependencies": {
+    "webpack": "^4.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IlyasValiullov/poll.git"
+  },
+  "keywords": [
+    "poll"
+  ],
+  "author": "Ilyas Valiullov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IlyasValiullov/poll/issues"
+  },
+  "homepage": "https://github.com/IlyasValiullov/poll#readme"
 }
