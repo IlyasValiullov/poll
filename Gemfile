@@ -65,6 +65,6 @@ gem 'bcrypt'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'jquery-rails'
 
-gem 'grape', '~> 1.0.2'
+gem 'grape', '~> 1.1.0'
 gem 'jwt', '~> 2.1.0'
 gem 'haml'

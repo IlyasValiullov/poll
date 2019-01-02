@@ -84,7 +84,7 @@ GEM
     ffi (1.9.25)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
-    grape (1.0.3)
+    grape (1.1.0)
       activesupport
       builder
       mustermann-grape (~> 1.0.0)
@@ -246,7 +246,7 @@ DEPENDENCIES
   byebug
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
-  grape (~> 1.0.2)
+  grape (~> 1.1.0)
   haml
   jbuilder (~> 2.5)
   jquery-rails
