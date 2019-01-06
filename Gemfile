@@ -68,3 +68,12 @@ gem 'jquery-rails'
 gem 'grape', '~> 1.1.0'
 gem 'jwt', '~> 2.1.0'
 gem 'haml'
+
+
+
+
+gem 'yabeda'
+# gem 'dogstatsd-ruby'
+gem 'dogapi'
+
+gem 'yabeda-datadog', git: 'https://github.com/IlyasValiullov/yabeda-datadog'
