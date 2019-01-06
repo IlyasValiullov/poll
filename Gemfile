@@ -69,7 +69,7 @@ gem 'grape', '~> 1.1.0'
 gem 'jwt', '~> 2.1.0'
 gem 'haml'
 
-
+gem 'dotenv-rails'
 
 
 gem 'yabeda'
