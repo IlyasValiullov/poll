@@ -1,7 +1,7 @@
 # POLL
 
-Test app for create and share poll. Your friend vote and you view results.
-
+App for create and share poll. Your friend vote and you view results.
+Also used for testing features.
 
 Components:
 	
