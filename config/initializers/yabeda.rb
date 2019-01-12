@@ -4,8 +4,8 @@ require 'yabeda/datadog'
 
 Yabeda.configure do
 
-  self.datadog_api_key = ENV['datadog_api_key']
-  self.datadog_app_key = ENV['datadog_app_key']
+  self.datadog_api_key = ENV['DATADOG_API_KEY']
+  self.datadog_app_key = ENV['DATADOG_APP_KEY']
   self.host = 'production'
 
   group :poll do
